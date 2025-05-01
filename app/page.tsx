@@ -3,6 +3,40 @@ import Image from "next/image"
 import { LatestStories } from "@/components/latest-stories"
 import { Button } from "@/components/ui/button"
 
+export const metadata = {
+  title: "Histoires de Vie - Chaque histoire compte",
+  description:
+    "Bienvenue sur Histoires de Vie, le blog où chaque récit compte. Lis, partage, et connecte-toi à travers des histoires vraies, touchantes et inspirantes.",
+  keywords: [
+    "blog", 
+    "histoires vraies", 
+    "témoignages", 
+    "partager son histoire", 
+    "expériences de vie", 
+    "inspiration", 
+    "émotions", 
+    "récits", 
+    "Guérir par les mots"
+  ],
+  openGraph: {
+    title: "Histoires de Vie - Chaque histoire compte",
+    description:
+      "Un blog émotionnel et sincère dédié aux récits de vie. Viens lire ou déposer ton histoire.",
+    url: "https://christianespheremood.vercel.app/", // mets l’URL de ton site
+    siteName: "Histoires de Vie",
+    images: [
+      {
+        url: "https://tonsite.com/images/og-image.jpg", // remplace par ton image OG
+        width: 1200,
+        height: 630,
+        alt: "Image d’une personne qui partage son histoire",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen">

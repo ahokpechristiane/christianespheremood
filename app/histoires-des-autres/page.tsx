@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { formatDate } from "@/lib/utils"
 import { StoryFilter } from "@/components/story-filter"
+import Head from "next/head"
 
 // Sample stories from others
 const stories = [
@@ -63,46 +64,56 @@ const stories = [
 
 export default function HistoiresDesAutres() {
   return (
-    <main className="min-h-screen py-12 bg-gray-50">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">Histoires des Autres</h1>
-          <p className="mt-4 text-xl text-gray-600">
-            Découvrez les récits touchants que d'autres personnes ont partagés. Chaque histoire est unique et porte en
-            elle une sagesse précieuse.
-          </p>
-        </div>
+    <>
+      <Head>
+        <title>Histoires des Autres</title>
+        <meta
+          name="description , christianespheremood"
+          content="Avec https://christianespheremood.vercel.app/ Découvrez les récits touchants que d'autres personnes ont partagés. Chaque histoire est unique et porte en elle une sagesse précieuse."
+        />
+      </Head>
 
-        {/* Filter Section */}
-        <StoryFilter />
+      <main className="min-h-screen py-12 bg-gray-50">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">Histoires des Autres</h1>
+            <p className="mt-4 text-xl text-gray-600">
+              Découvrez les récits touchants que d'autres personnes ont partagés. Chaque histoire est unique et porte en
+              elle une sagesse précieuse.
+            </p>
+          </div>
 
-        {/* Stories Grid */}
-        <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3">
-          {stories.map((story) => (
-            <Link
-              key={story.id}
-              href={`/histoires-des-autres/${story.id}`}
-              className="story-card block bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              <div className="relative h-48">
-                <Image src={story.image || "/placeholder.svg"} alt={story.title} fill className="object-cover" />
-                <div className="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded">
-                  {story.category}
+          {/* Filter Section */}
+          <StoryFilter />
+
+          {/* Stories Grid */}
+          <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3">
+            {stories.map((story) => (
+              <Link
+                key={story.id}
+                href={`/histoires-des-autres/${story.id}`}
+                className="story-card block bg-white rounded-lg overflow-hidden shadow-md"
+              >
+                <div className="relative h-48">
+                  <Image src={story.image || "/placeholder.svg"} alt={story.title} fill className="object-cover" />
+                  <div className="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    {story.category}
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-500">{formatDate(story.date)}</span>
-                  <span className="text-sm font-medium text-amber-600">Par {story.author}</span>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm text-gray-500">{formatDate(story.date)}</span>
+                    <span className="text-sm font-medium text-amber-600">Par {story.author}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{story.title}</h3>
+                  <p className="text-gray-600">{story.excerpt}</p>
+                  <div className="mt-4 text-amber-600 font-medium">Lire la suite →</div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{story.title}</h3>
-                <p className="text-gray-600">{story.excerpt}</p>
-                <div className="mt-4 text-amber-600 font-medium">Lire la suite →</div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   )
 }

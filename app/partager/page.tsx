@@ -1,6 +1,12 @@
 import Image from "next/image"
 import { Mail } from "lucide-react"
 
+export const metadata = {
+  title: "Partager mon histoire - Témoignages personnels Avec christianespheremood  ",
+  description: " Avec https://christianespheremood.vercel.app/ Partagez votre histoire personnelle avec notre communauté. Vos expériences de vie, vos leçons et vos témoignages peuvent inspirer et aider d'autres personnes."
+  
+}
+
 export default function Partager() {
   return (
     <main className="min-h-screen py-12 bg-gray-50">
@@ -23,7 +29,7 @@ export default function Partager() {
                 <p>Tu peux rester anonyme si tu le souhaites. N'hésite pas à préciser si tu veux être cité ou non.</p>
               </div>
               <a
-                href="mailto:histoires@tonsite.com"
+                href="mailto:juchrist02@gmail.com"
                 className="inline-flex items-center px-6 py-3 mt-6 text-white bg-amber-500 rounded-full hover:bg-amber-600 transition-colors"
               >
                 <Mail className="w-5 h-5 mr-2" />

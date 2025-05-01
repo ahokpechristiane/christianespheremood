@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Histoires de Vie | Blog Personnel",
+  title: "Histoires de Vie | Blog Personnel avec  christianesphermood ",
   description: "Un blog dédié aux histoires de vie, où chaque récit compte et inspire.",
     generator: 'v0.dev'
 }
@@ -36,3 +36,15 @@ export default function RootLayout({
     </html>
   )
 }
+
+const jsonLd = {
+  "@context": "https://christianespheremood.vercel.app/",
+  "@type": "WebPage",
+  "name": "Partager son histoire personnelle avec christianespheremood",
+  "description": "Plateforme pour partager vos témoignages de vie inspirants"
+};
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>

@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 font-playfair">Histoires de Vie</h3>
             <p className="text-gray-300">
-              Un espace dédié au partage d'histoires personnelles, pour inspirer, guérir et connecter les cœurs à
+              Avec https://christianespheremood.vercel.app/ Un espace dédié au partage d'histoires personnelles, pour inspirer, guérir et connecter les cœurs à
               travers nos expériences communes.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 font-playfair">Suivez-moi</h3>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/emma.bxbxdegood"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-amber-400 transition-colors"
