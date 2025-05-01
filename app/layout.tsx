@@ -16,9 +16,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Histoires de Vie | Blog Personnel avec  christianesphermood ",
+  title: "Histoires de Vie | Blog Personnel avec christianesphermood",
   description: "Un blog dédié aux histoires de vie, où chaque récit compte et inspire.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -28,7 +28,44 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id=GTM-W6K6N3F9'+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-W6K6N3F9');
+            `,
+          }}
+        />
+
+        {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://christianespheremood.vercel.app/",
+              "@type": "WebPage",
+              "name": "Partager son histoire personnelle avec christianesphermood",
+              "description": "Plateforme pour partager vos témoignages de vie inspirants",
+            }),
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W6K6N3F9"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
         <Header />
         {children}
         <Footer />
@@ -36,15 +73,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-const jsonLd = {
-  "@context": "https://christianespheremood.vercel.app/",
-  "@type": "WebPage",
-  "name": "Partager son histoire personnelle avec christianespheremood",
-  "description": "Plateforme pour partager vos témoignages de vie inspirants"
-};
-
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-/>
